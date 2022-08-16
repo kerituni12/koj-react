@@ -1,0 +1,27 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: my-react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-react-app
+  template:
+    metadata:
+      labels:
+        app: my-react-app
+    spec:
+      containers:
+        - name: my-react-app
+          image: kerituni12/react-koj:1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          env:
+            - name: REACT_APP_PUBLIC_BASE_API_URL
+              value: https://api.edicode.dev
+            - name: REACT_APP_UNSAFE_ENCRYPT_KEY
+              value: how_do_you_use_this
+
+      restartPolicy: Always

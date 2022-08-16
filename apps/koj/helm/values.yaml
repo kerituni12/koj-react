@@ -1,0 +1,10 @@
+image: kerituni12/koj:1.1
+pullPolicy: Always
+storageClassName: longhorn
+postgres:
+  url: "postgresql://eadmin:Random123%40@edicode.dev:5432/edicode?connect_timeout=300"
+nats:
+  url: "nats://nats.nats:4222"
+app:
+  name: koj
+  port: 3001

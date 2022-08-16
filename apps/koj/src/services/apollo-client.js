@@ -17,7 +17,7 @@ import axios from './axios';
 // import { RestLink } from 'apollo-link-rest';
 
 const httpLink = new HttpLink({
-  uri: 'https://sub.koj.test/api/graphql',
+  uri: `${BASE_API_URL}/${BASE_API_PREFIX}/graphql`,
   credentials: 'include',
 });
 

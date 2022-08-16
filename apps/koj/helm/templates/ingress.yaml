@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: oj-edicode
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: oj.edicode.dev
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: my-react-app
+                port:
+                  number: 80
