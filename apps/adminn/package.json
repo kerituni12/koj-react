@@ -1,0 +1,30 @@
+{
+  "name": "adminn",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "deploy": "gh-pages -d ../../dist/apps/adminn",
+    "serve": "craco start",
+    "build": "BUILD_PATH=../../dist/apps/adminn craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

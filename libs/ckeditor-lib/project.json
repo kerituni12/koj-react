@@ -1,0 +1,31 @@
+{
+  "root": "libs/ckeditor-lib",
+  "sourceRoot": "libs/ckeditor-lib/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["webpack --mode production"],
+        "cwd": "libs/ckeditor-lib",
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ckeditor-lib/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ckeditor-lib"],
+      "options": {
+        "jestConfig": "libs/ckeditor-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

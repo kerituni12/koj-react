@@ -1,0 +1,6 @@
+{
+  "root": "apps/adminn",
+  "sourceRoot": "apps/adminn/src",
+  "projectType": "application",
+  "tags": []
+}

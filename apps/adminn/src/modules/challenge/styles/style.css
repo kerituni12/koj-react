@@ -1,0 +1,80 @@
+.ant-tabs-tab.ant-tabs-tab-active .ant-btn {
+  color: inherit;
+  background: initial;
+}
+
+.ant-tabs-tab .ant-btn {
+  background-color: transparent;
+  color: inherit;
+  border-color: inherit;
+  transition: none;
+  margin-right: 8px;
+  height: 20px;
+  min-width: 20px;
+  line-height: 1;
+}
+
+.tablist-testcase .ant-tabs-nav-operations .ant-tabs-nav-more {
+  color: #fff;
+}
+.tablist-testcase.ant-tabs > .ant-tabs-nav .ant-tabs-nav-add {
+  transition: none;
+}
+
+.tablist-testcase.ant-tabs-card.ant-tabs-top > .ant-tabs-nav {
+  margin-bottom: 0;
+  /* background-color: #1e1e1e; */
+}
+
+.tablist-testcase.ant-tabs-card.ant-tabs-top > .ant-tabs-nav:before {
+  border: none;
+}
+
+.tablist-testcase.ant-tabs-card.ant-tabs-top
+  > .ant-tabs-nav
+  .ant-tabs-tab
+  + .ant-tabs-tab {
+  margin-left: 0;
+}
+
+.tablist-testcase.ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
+  border-radius: 0;
+}
+
+.tablist-testcase.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  border: 0;
+  color: #cdcdcdcd;
+  background-color: #1d2631;
+}
+
+.tablist-testcase .ant-tabs-tab-with-remove {
+  color: #cdcdcdcd;
+  background-color: #1d2631;
+}
+
+.tablist-testcase .ant-tabs-tab.ant-tabs-tab-with-remove.ant-tabs-tab-active {
+  background-color: #1e1e1e;
+}
+
+.tablist-testcase.ant-tabs-card
+  > .ant-tabs-nav
+  .ant-tabs-tab.ant-tabs-tab-active {
+  background-color: #1e1e1e;
+}
+
+.tablist-testcase
+  .ant-tabs-tab.ant-tabs-tab-with-remove.ant-tabs-tab-active
+  .ant-tabs-tab-btn {
+  color: #fff;
+}
+.tablist-testcase .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fff;
+}
+
+.tablist-testcase .ant-tabs-tab-remove {
+  color: #e9e9e9;
+}
+
+.tablist-testcase .ant-tabs-tab-remove:hover {
+  color: #e9e9e9;
+}

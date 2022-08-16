@@ -1,0 +1,22 @@
+{
+  "presets": [
+    [
+      "@nrwl/react/babel",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ],
+  "plugins": [
+    ["import", { "libraryName": "antd", "libraryDirectory": "es" }]
+    // [
+    //   "import",
+    //   {
+    //     "libraryName": "@ant-design/icons",
+    //     "libraryDirectory": "es/icons",
+    //     "camel2DashComponentName": false
+    //   },
+    //   "ant-design-icons"
+    // ]
+  ]
+}

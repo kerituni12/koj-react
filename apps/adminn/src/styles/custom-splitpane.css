@@ -1,0 +1,22 @@
+.Resizer.vertical:not(.disabled) {
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.Resizer.vertical:not(.disabled)::after {
+  content: ' ';
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 40px;
+  border: 1px solid #ef742b;
+  border-radius: 9999px;
+  background-color: #ef742b;
+}

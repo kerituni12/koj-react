@@ -1,0 +1,15 @@
+{
+  "add": "Thêm",
+  "create_new": "Tạo Mới",
+  "title": {
+    "challenges": "Thử thách",
+    "contests": "Cuộc thi",
+    "courses": "Khóa học",
+    "blog": "Blog",
+    "account": "Tài khoản",
+    "action": {
+      "login": "Đăng nhập",
+      "logout": "Đăng xuất"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "add": "Add",
+  "create_new": "Create New",
+  "title": {
+    "challenges": "Challenge",
+    "contests": "Contest",
+    "courses": "Courses",
+    "blog": "Blog",
+    "account": "Account",
+    "login": "Login",
+    "logout": "Log out"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "root": "libs/editor-mui-lib",
+  "sourceRoot": "libs/editor-mui-lib/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/editor-mui-lib/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/editor-mui-lib"],
+      "options": {
+        "jestConfig": "libs/editor-mui-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

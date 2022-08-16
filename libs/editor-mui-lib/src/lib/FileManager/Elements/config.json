@@ -1,0 +1,30 @@
+{
+  "icons": {
+    ".png": "/assets/img/files/png.svg",
+    ".jpg": "/assets/img/files/jpg.svg",
+    ".jpeg": "/assets/img/files/jpeg.svg",
+    ".doc": "/assets/img/files/doc.svg",
+    ".docx": "/assets/img/files/doc.svg",
+    ".xls": "/assets/img/files/xls.svg",
+    ".pdf": "/assets/img/files/pdf.svg",
+    ".ppt": "/assets/img/files/ppt.svg",
+    ".svg": "/assets/img/files/svg.svg",
+    ".xml": "/assets/img/files/xml.svg",
+    ".psd": "/assets/img/files/psd.svg",
+    ".ai": "/assets/img/files/ai.svg",
+    ".mp4": "/assets/img/files/mp4.svg",
+    ".txt": "/assets/img/files/txt.svg",
+    ".csv": "/assets/img/files/csv.svg",
+    ".zip": "/assets/img/files/zip.svg",
+    ".gif": "/assets/img/files/gif.svg",
+    ".rar": "/assets/img/files/zip-1.svg",
+    ".tar.gz": "/assets/img/files/zip-1.svg",
+    "broken": "/assets/img/files/search.svg",
+    "folder": "/assets/img/files/folder.svg",
+    "folderopen": "/assets/img/files/folderopen.svg",
+    "folderfull": "/assets/img/files/folderfull.svg"
+  },
+  "textFiles": [".txt"],
+  "imageFiles": [".jpg", ".jpeg", ".png", ".svg", ".gif"],
+  "archiveFiles": [".zip", ".tar.gz"]
+}

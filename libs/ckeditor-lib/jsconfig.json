@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "paths": {
+      "@koj-react/editor-lib/*": ["../ckeditor-lib/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

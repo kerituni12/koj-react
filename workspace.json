@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "projects": {
+    "adminn": "apps/adminn",
+    "adminn-e2e": "apps/adminn-e2e",
+    "ckeditor-lib": "libs/ckeditor-lib",
+    "editor": "apps/editor",
+    "editor-e2e": "apps/editor-e2e",
+    "editor-lib": "libs/editor-lib",
+    "editor-mui-lib": "libs/editor-mui-lib",
+    "emitter": "libs/emitter",
+    "hooks": "libs/hooks",
+    "koj": "apps/koj",
+    "koj-e2e": "apps/koj-e2e",
+    "react-hooks": "libs/react-hooks",
+    "simple": "apps/simple",
+    "simple-e2e": "apps/simple-e2e",
+    "simple2": "apps/simple2",
+    "simple2-e2e": "apps/simple2-e2e",
+    "testui": "apps/testui",
+    "testui-e2e": "apps/testui-e2e",
+    "ui": "libs/ui",
+    "ui-drap": "libs/ui-drap"
+  }
+}

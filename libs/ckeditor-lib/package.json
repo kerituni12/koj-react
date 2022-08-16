@@ -1,0 +1,9 @@
+{
+  "name": "@koj-react/ckeditor",
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "files": [
+    "build",
+    "ckeditor5-metadata.json"
+  ]
+}

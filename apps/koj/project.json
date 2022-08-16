@@ -1,0 +1,6 @@
+{
+  "root": "apps/koj",
+  "sourceRoot": "apps/koj/src",
+  "projectType": "application",
+  "tags": []
+}

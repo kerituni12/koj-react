@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+/* .ant-table-selection-column {
+  display: none;
+} */
+/* .ant-table-selection-col,
+.ant-table-selection-column {
+  display: none;
+} */
+/* .tableSelectCheckboxOverride .ant-checkbox-inner {
+  background: transparent;
+} */
+.site-custom-tab-bar {
+  z-index: 999;
+  background: #fff;
+  padding: 0 10px;
+}
+/* .ck-editor__editable_inline {
+  min-height: 90vh;
+} */

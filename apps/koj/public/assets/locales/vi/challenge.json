@@ -1,0 +1,12 @@
+{
+  "input": "Đầu vào",
+  "expected_output": "Đầu ra mong muốn",
+  "actual_output": "Đầu ra thực tế",
+  "limit_time": "Giới hạn thời gian",
+  "executed_time": "Thời gian thực hiện",
+  "state": "Trạng thái",
+  "run_test": "Chạy thử",
+  "submit": "Nộp bài",
+  "wrong": "Kết quả sai",
+  "hidden_testcase": "Test case ẩn"
+}

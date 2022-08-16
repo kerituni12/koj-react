@@ -1,0 +1,12 @@
+{
+  "input": "Input",
+  "expected_output": "Expected Output",
+  "actual_output": "Actual Output",
+  "limit_time": "Limit Time",
+  "executed_time": "Execute Time",
+  "state": "State",
+  "run_test": "Run Test",
+  "submit": "Submit",
+  "wrong": "wrong",
+  "hidden_testcase": "Hidden test case"
+}

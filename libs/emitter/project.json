@@ -1,0 +1,33 @@
+{
+  "root": "libs/emitter",
+  "sourceRoot": "libs/emitter/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/emitter",
+        "main": "libs/emitter/src/index.js",
+        "tsConfig": "libs/emitter/tsconfig.lib.json",
+        "assets": ["libs/emitter/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/emitter/**/*.js"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/emitter"],
+      "options": {
+        "jestConfig": "libs/emitter/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

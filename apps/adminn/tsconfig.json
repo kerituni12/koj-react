@@ -1,0 +1,34 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@koj-react/hooks": ["../../libs/hooks/src/index.js"],
+      "@koj-react/emitter": ["../../libs/emitter/src/index.js"],
+      "@koj-react/ui/*": ["../../libs/ui/src/*"],
+      "@koj-react/editor-lib/*": ["../../libs/editor-lib/src/lib/*"]
+    }
+  },
+  "files": [],
+  "include": ["libs"],
+  "exclude": ["../../libs/ckeditor-lib/src/index.js"],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}

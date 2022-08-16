@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Simple</title>
+  <base href="/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script>
+  if (global === undefined) {
+    var global = window;
+  }
+
+</script>
+<script>
+  var moduleData = "export function hello() { alert('hello'); };";
+  var b64moduleData = "data:text/javascript;base64," + btoa(moduleData);
+
+</script>
+<!-- <script type="module">
+
+  async function doimport() {
+    const module = await import(b64moduleData);
+    module.hello();
+  }
+
+  doimport();
+
+</script> -->
+
+</html>
