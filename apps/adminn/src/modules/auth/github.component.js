@@ -4,6 +4,7 @@
  * LoginSocialGithub
  *
  */
+import { BASE_API_URL } from '@/constants/default-value';
 import React, { memo, useCallback, useEffect } from 'react';
 
 const GITHUB_URL = 'https://github.com';
