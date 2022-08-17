@@ -7,7 +7,7 @@ import RoleRouter from '@/modules/role/role.route';
 import UserRouter from '@/modules/user/user.route';
 import RoleList from '@/modules/role/views/role-list.view';
 import GroupRouter from '@/modules/group/group.route';
-import LayoutDashboard from '@/components/layout.component';
+import LayoutDashboard from '@/components/layout-dashboard.component';
 import NotFoundPage from '@/components/not-found.component';
 // import GroupRouter from '@/modules/group/group.route';
 import ChallengeRoute from '@/modules/challenge/challenge.route';
@@ -38,7 +38,7 @@ const Challenges = lazy(() =>
 );
 
 const routeList = [
-  { path: '/', element: <HomePage /> },
+  // { path: '/', element: <HomePage /> },
   {
     path: '/signin',
     element: <SignInView />,
@@ -47,25 +47,25 @@ const routeList = [
     path: '/signup',
     element: <SignUpView />,
   },
+  // {
+  //   path: '/user',
+  //   element: <AuthRoute element={<UserList />} titleId="title.login" />,
+  // },
+  // {
+  //   path: '/challenge',
+  //   element: <Challenges />,
+  //   children: [{ path: ':slug', element: <ChallengeView /> }],
+  // },
+  // {
+  //   path: '/react-markdown',
+  //   element: <ReactMarkdowTest />,
+  // },
+  // {
+  //   path: '/test',
+  //   element: <Test />,
+  // },
   {
-    path: '/user',
-    element: <AuthRoute element={<UserList />} titleId="title.login" />,
-  },
-  {
-    path: '/challenge',
-    element: <Challenges />,
-    children: [{ path: ':slug', element: <ChallengeView /> }],
-  },
-  {
-    path: '/react-markdown',
-    element: <ReactMarkdowTest />,
-  },
-  {
-    path: '/test',
-    element: <Test />,
-  },
-  {
-    path: '/dashboard',
+    path: '/',
     element: <AuthRoute element={<LayoutDashboard />} />,
     children: [
       { path: 'user/*', element: <UserRouter /> },
