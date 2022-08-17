@@ -23,5 +23,7 @@ spec:
               value: https://api.edicode.dev
             - name: REACT_APP_UNSAFE_ENCRYPT_KEY
               value: how_do_you_use_this
+            - name: REACT_APP_X_DOMAIN
+              value: api.edicode.dev
 
       restartPolicy: Always
