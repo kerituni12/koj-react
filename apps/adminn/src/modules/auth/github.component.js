@@ -92,7 +92,7 @@ export const LoginSocialGithub = ({
   const handlePostMessage = useCallback(
     async ({ type, code, provider }) => {
       if (type === 'code' && provider === 'github' && code) {
-        fetch(`https://sub.koj.test/api/auth/github/callback?code=${code}`, {
+        fetch(`https://${BASE_API_URL}/api/auth/github/callback?code=${code}`, {
           method: 'GET',
         })
           .then((response) => response.json())

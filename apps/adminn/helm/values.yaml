@@ -1,0 +1,3 @@
+image: kerituni12/react-dashboard:1.1
+app:
+  name: dashboard

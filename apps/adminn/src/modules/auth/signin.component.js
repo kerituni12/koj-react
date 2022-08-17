@@ -62,11 +62,11 @@ const LoginForm = () => {
     navigate(from);
   };
   // const github = () => {
-  //   window.open('https://sub.koj.test/api/auth/github?path=1', '_self');
+  //   window.open(`https://${BASE_API_URL}/api/auth/github?path=1`, '_self');
   // };
   const github = () => {
     window.open(
-      `https://github.com/login/oauth/authorize?client_id=Iv1.7b1c7b07ba355ee5&redirect_uri=https://sub.koj.test/api/auth/github/callback?path='hello'&scope=user:email`,
+      `https://github.com/login/oauth/authorize?client_id=Iv1.7b1c7b07ba355ee5&redirect_uri=https://${BASE_API_URL}/api/auth/github/callback?path='hello'&scope=user:email`,
       '_self'
     );
   };

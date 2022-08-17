@@ -1,0 +1,29 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: react-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-dashboard
+  template:
+    metadata:
+      labels:
+        app: react-dashboard
+    spec:
+      containers:
+        - name: react-dashboard
+          image: kerituni12/react-dashboard:1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          env:
+            - name: REACT_APP_PUBLIC_BASE_API_URL
+              value: https://api.edicode.dev
+            - name: REACT_APP_UNSAFE_ENCRYPT_KEY
+              value: how_do_you_use_this
+            - name: REACT_APP_X_DOMAIN
+              value: api.edicode.dev
+
+      restartPolicy: Always
