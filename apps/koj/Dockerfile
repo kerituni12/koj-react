@@ -38,7 +38,7 @@ RUN rm -rf ./*
 
 RUN pwd
 COPY --from=build /app/dist/apps/koj ./
-# COPY --from=build /app/apps/koj/.nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/apps/koj/.nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Containers run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
