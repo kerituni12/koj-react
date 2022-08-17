@@ -11,7 +11,7 @@ const axios = Axios.create({
   baseURL: `${BASE_API_URL}/${BASE_API_PREFIX}`,
   headers: {
     'Content-Type': 'application/json',
-    'x-domain': 'sub.koj.test',
+    'x-domain': process.env.REACT_APP_X_DOMAIN,
   },
   withCredentials: true,
 });

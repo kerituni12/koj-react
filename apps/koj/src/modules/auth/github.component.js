@@ -4,6 +4,7 @@
  * LoginSocialGithub
  *
  */
+import { BASE_API_PREFIX, BASE_API_URL } from '@/constants/default-value';
 import React, { memo, useCallback, useEffect } from 'react';
 
 const GITHUB_URL = 'https://github.com';
@@ -92,9 +93,12 @@ export const LoginSocialGithub = ({
   const handlePostMessage = useCallback(
     async ({ type, code, provider }) => {
       if (type === 'code' && provider === 'github' && code) {
-        fetch(`https://sub.koj.test/api/auth/github/callback?code=${code}`, {
-          method: 'GET',
-        })
+        fetch(
+          `${BASE_API_URL}/${BASE_API_PREFIX}/auth/github/callback?code=${code}`,
+          {
+            method: 'GET',
+          }
+        )
           .then((response) => response.json())
           .then((response) => {
             onResolve({ provider: 'github', data: response });

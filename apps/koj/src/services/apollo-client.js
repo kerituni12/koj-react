@@ -27,7 +27,7 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       'x-access-payload': accessTokenPayload ? `${accessTokenPayload}` : '',
-      'x-domain': 'sub.koj.test',
+      'x-domain': process.env.REACT_APP_X_DOMAIN,
     },
   };
 });
