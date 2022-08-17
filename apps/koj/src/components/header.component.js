@@ -163,7 +163,13 @@ export function RightHeader() {
       case 'logout': {
         const res = await dispatch(logout()).unwrap();
         res &&
-          navigate(`/signin?from=${encodeURIComponent(location.pathname)}`);
+          navigate(
+            `/signin?from=${
+              location.pathname === '/' || location.pathname === '/signin'
+                ? '/'
+                : encodeURIComponent(location.pathname)
+            }`
+          );
         return;
       }
     }
@@ -201,7 +207,13 @@ export function RightHeader() {
         <span
           className="login-action"
           onClick={() =>
-            navigate(`/signin?from=${encodeURIComponent(location.pathname)}`)
+            navigate(
+              `/signin?from=${
+                location.pathname === '/' || location.pathname === '/signin'
+                  ? '/'
+                  : encodeURIComponent(location.pathname)
+              }`
+            )
           }
         >
           {t('action.login')}

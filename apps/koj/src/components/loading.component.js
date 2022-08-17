@@ -21,7 +21,13 @@ export function LoginRequire() {
       <Button
         type="primary"
         onClick={() =>
-          navigate(`/signin?from=${encodeURIComponent(location.pathname)}`)
+          navigate(
+            `/signin?from=${
+              location.pathname === '/' || location.pathname === '/signin'
+                ? '/'
+                : encodeURIComponent(location.pathname)
+            }`
+          )
         }
       >
         Login
