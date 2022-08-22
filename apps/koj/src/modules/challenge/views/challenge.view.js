@@ -77,7 +77,8 @@ function Challenge(props) {
     },
   });
 
-  const isDesktop = useMediaQuery('(min-width: 992px)');
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+  // const isTablet = useMediaQuery('(min-width: 768px)');
 
   const [collapsed, setCollapsed] = useState(true);
   const [tabKey, setTabKey] = useState('description');
@@ -155,19 +156,100 @@ function Challenge(props) {
         </div>
         <RightHeader />
       </Header>
-      <Content className="child-layout">
-        <SplitPane
-          split="vertical"
-          minSize={300}
-          maxSize={700}
-          defaultSize={555}
-          className="primary"
-          style={{
-            height: `calc(100vh - ${headerHeightPx}`,
-            position: 'relative',
-          }}
-        >
-          {/* Pane 1 */}
+
+      {/* For Desktop */}
+      {isDesktop && (
+        <Content className="child-layout">
+          <SplitPane
+            split="vertical"
+            minSize={300}
+            maxSize={700}
+            defaultSize={555}
+            className="primary"
+            style={{
+              height: `calc(100vh - ${headerHeightPx}`,
+              position: 'relative',
+            }}
+          >
+            {/* Pane 1 */}
+            <Layout hasSider className="child-layout">
+              {isDesktop ? (
+                <Sider
+                  trigger={null}
+                  collapsible
+                  collapsed={collapsed}
+                  onCollapse={onCollapse}
+                  collapsedWidth={48}
+                  className={challengeSiderStyle}
+                >
+                  <SidebarMenu
+                    items={sidebarChallengeViewItems}
+                    callback={setTabKeyCallback}
+                    selectedKeys={[tabKey]}
+                  />
+                </Sider>
+              ) : (
+                <Drawer
+                  title="Menu"
+                  width={300}
+                  onClose={() => setIsOpenDrawer(false)}
+                  closable={false}
+                  visible={isOpenDrawer}
+                  placement="left"
+                  className={`${drawerStyle} extend-sider-bg`}
+                >
+                  {/* <SidebarMenu
+                  items={sidebarChallengeViewItems}
+                  callback={setTabKeyCallback}
+                  selectedKeys={[tabKey]}
+                /> */}
+                </Drawer>
+              )}
+              <PerfectScrollbar style={{ width: '100%' }}>
+                <Content className="content">{render}</Content>
+              </PerfectScrollbar>
+            </Layout>
+
+            {/* Pane 2 */}
+            {!languages.length ? (
+              <div className="center-screen">
+                <Spin size="large" />
+              </div>
+            ) : (
+              <>
+                <CodePaneView
+                  ckeditor={ckeditor}
+                  languages={languages}
+                  setLanguages={setLanguages}
+                  challenge={data.challenge}
+                  customType={customType}
+                />
+                {isOpenCommentDrawer && (
+                  <CommentDrawer
+                    setIsOpenCommentDrawer={setIsOpenCommentDrawer}
+                    isOpenCommentDrawer={isOpenCommentDrawer}
+                    challengeId={Number(data?.challenge?.id)}
+                  />
+                )}
+              </>
+            )}
+          </SplitPane>
+          <Modal
+            title=""
+            footer={null}
+            centered
+            visible={isLoginRequired}
+            onOk={setLoginRequiredFasle}
+            onCancel={setLoginRequiredFasle}
+          >
+            <LoginForm isFromModal={true} callback={setLoginRequiredFasle} />
+          </Modal>
+        </Content>
+      )}
+
+      {/* For mobile */}
+      {!isDesktop && (
+        <div style={{ overflow: 'auto' }}>
           <Layout hasSider className="child-layout">
             {isDesktop ? (
               <Sider
@@ -187,25 +269,24 @@ function Challenge(props) {
             ) : (
               <Drawer
                 title="Menu"
+                width={300}
                 onClose={() => setIsOpenDrawer(false)}
                 closable={false}
                 visible={isOpenDrawer}
                 placement="left"
                 className={`${drawerStyle} extend-sider-bg`}
               >
-                <SidebarMenu
-                  items={sidebarChallengeViewItems}
-                  callback={setTabKeyCallback}
-                  selectedKeys={[tabKey]}
-                />
+                {/* <SidebarMenu
+              items={sidebarChallengeViewItems}
+              callback={setTabKeyCallback}
+              selectedKeys={[tabKey]}
+            /> */}
               </Drawer>
             )}
             <PerfectScrollbar style={{ width: '100%' }}>
               <Content className="content">{render}</Content>
             </PerfectScrollbar>
           </Layout>
-
-          {/* Pane 2 */}
           {!languages.length ? (
             <div className="center-screen">
               <Spin size="large" />
@@ -228,18 +309,8 @@ function Challenge(props) {
               )}
             </>
           )}
-        </SplitPane>
-        <Modal
-          title=""
-          footer={null}
-          centered
-          visible={isLoginRequired}
-          onOk={setLoginRequiredFasle}
-          onCancel={setLoginRequiredFasle}
-        >
-          <LoginForm isFromModal={true} callback={setLoginRequiredFasle} />
-        </Modal>
-      </Content>
+        </div>
+      )}
     </Layout>
   );
 }
@@ -355,6 +426,7 @@ const drawerStyle = css`
   & .ant-drawer-body {
     padding: 0;
     height: 100%;
+    width: 300px;
   }
   & .ant-drawer-header {
     height: ${headerHeightPx}px;

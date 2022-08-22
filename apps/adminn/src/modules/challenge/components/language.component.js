@@ -20,6 +20,7 @@ import {
   defaultLanguageOptions,
   defaultLanguages,
 } from '../configs/languages.config';
+import { useTranslation } from 'react-i18next';
 const EditableContext = React.createContext(null);
 
 const EditableCell = ({
@@ -113,6 +114,7 @@ const EditableCell = ({
 let removeFormItem, moveFromItem;
 
 function Language({ form, languages, setLanguages }) {
+  const { t } = useTranslation();
   const [editingKey, setEditingKey] = useState(null);
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [isEdittingFromCreate, setIsEdittingFromCreate] = useState(false);
@@ -164,22 +166,22 @@ function Language({ form, languages, setLanguages }) {
 
   const $columns = [
     {
-      title: 'Name',
+      title: t('title.name'),
       dataIndex: 'id',
       width: '30%',
       track: true,
     },
     {
-      title: 'Timeout(s)',
+      title: `${t('title.timeout')}(s)`,
       dataIndex: 'timeout',
-      // editable: true,
+      align: 'center',
       width: '20%',
       track: true,
     },
     {
-      title: 'Description',
+      title: t('title.description'),
       dataIndex: 'description',
-      // editable: true,
+      align: 'center',
       width: '30%',
       track: true,
     },
@@ -196,7 +198,7 @@ function Language({ form, languages, setLanguages }) {
             <EditOutlined />
           </Typography.Link>
           <Popconfirm
-            title="Sure to delete?"
+            title={t('statement.sure_to_delete')}
             onConfirm={() => {
               removeFormItem(record.name);
               setLanguages(form.getFieldValue().languages);
@@ -259,7 +261,7 @@ function Language({ form, languages, setLanguages }) {
                   marginBottom: 16,
                 }}
               >
-                Add a row
+                {t('action.add')}
               </Button>
             </div>
             <Table
@@ -301,10 +303,6 @@ function Language({ form, languages, setLanguages }) {
                   <Button
                     onClick={() => {
                       const formResultField = form.getFieldValue();
-                      console.log(
-                        '🚀 ~ file: language.component.js ~ line 306 ~ Language ~ formResultField',
-                        formResultField
-                      );
 
                       // Form field increase whenever change form.item but ui languages only update after re-render
                       // So we can delete the last item if has change value in form.item to keep ui work well
@@ -330,7 +328,7 @@ function Language({ form, languages, setLanguages }) {
                       closeDrawer();
                     }}
                   >
-                    Cancel
+                    {t('action.cancel')}
                   </Button>
 
                   <Button
@@ -342,7 +340,7 @@ function Language({ form, languages, setLanguages }) {
                     }}
                     type="primary"
                   >
-                    Submit
+                    {t('action.submit')}
                   </Button>
                 </Space>
               }
@@ -351,13 +349,16 @@ function Language({ form, languages, setLanguages }) {
                 <Col span={12}>
                   <Form.Item
                     name={getFormItemNameField(languages, 'id')}
-                    label="Name"
+                    label={t('title.name')}
                     rules={[
-                      { required: true, message: 'Please choose the approver' },
+                      {
+                        required: true,
+                        message: t('statement.please_choose_options'),
+                      },
                     ]}
                   >
                     <Select
-                      placeholder="Please choose the approver"
+                      placeholder={t('statement.please_choose_options')}
                       options={languageOptions}
                     />
                   </Form.Item>
@@ -365,9 +366,12 @@ function Language({ form, languages, setLanguages }) {
                 <Col span={12}>
                   <Form.Item
                     name={getFormItemNameField(languages, 'timeout')}
-                    label="Time"
+                    label={t('title.time')}
                     rules={[
-                      { required: true, message: 'Please enter user name' },
+                      {
+                        required: true,
+                        message: t('statement.please_enter_time'),
+                      },
                     ]}
                   >
                     <InputNumber
@@ -384,11 +388,11 @@ function Language({ form, languages, setLanguages }) {
                 <Col span={24}>
                   <Form.Item
                     name={getFormItemNameField(languages, 'description')}
-                    label="Description"
+                    label={t('title.description')}
                   >
                     <Input.TextArea
                       rows={4}
-                      placeholder="please enter url description"
+                      placeholder={t('statement.please_enter_description')}
                     />
                   </Form.Item>
                 </Col>

@@ -5,7 +5,7 @@
   "scripts": {
     "deploy": "gh-pages -d ../../dist/apps/koj",
     "serve": "craco start",
-    "build": "BUILD_PATH=../../dist/apps/koj craco build",
+    "build": "GENERATE_SOURCEMAP=false BUILD_PATH=../../dist/apps/koj craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

@@ -16,26 +16,6 @@ import { Link } from 'react-router-dom';
 
 export const sidebarItems = [
   {
-    key: 'user',
-    label: 'User',
-    icon: <UserOutlined />,
-    permissions: 'user.read',
-    children: [
-      {
-        key: 'user-create',
-        label: <Link to="/dashboard/challenge/create">Create</Link>,
-        icon: <PlusOutlined />,
-        permissions: 'user.read',
-      },
-      {
-        key: 'user-list',
-        label: <Link to="/dashboard/user/list">Create</Link>,
-        icon: <PlusOutlined />,
-        permissions: 'user.read',
-      },
-    ],
-  },
-  {
     key: 'challenge',
     label: 'Changlle',
     icon: <CodeOutlined />,
@@ -43,33 +23,33 @@ export const sidebarItems = [
     children: [
       {
         key: 'challenge-create',
-        label: <Link to="/dashboard/challenge/create">Create</Link>,
+        label: <Link to="/challenge/create">Create</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
       {
         key: 'challenge-list',
-        label: <Link to="/dashboard/challenge/list">List</Link>,
+        label: <Link to="/challenge/list">List</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
     ],
   },
   {
-    key: 'fileManager',
-    label: 'File Manager',
-    icon: <CodeOutlined />,
+    key: 'user',
+    label: 'User',
+    icon: <UserOutlined />,
     permissions: 'user.read',
     children: [
       {
-        key: 'fileManager-create',
-        label: <Link to="/dashboard/file-manager/create">Create</Link>,
+        key: 'user-create',
+        label: <Link to="/challenge/create">Create</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
       {
-        key: 'fileManager-list',
-        label: <Link to="/dashboard/file-manager/list">List</Link>,
+        key: 'user-list',
+        label: <Link to="/user/list">Create</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
@@ -83,62 +63,56 @@ export const sidebarItems = [
     children: [
       {
         key: 'role-create',
-        label: <Link to="/dashboard/role/create">Create</Link>,
+        label: <Link to="/role/create">Create</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
       {
         key: 'role-list',
-        label: <Link to="/dashboard/role/list">List</Link>,
+        label: <Link to="/role/list">List</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
       {
         key: 'role-edit',
-        label: <Link to="/dashboard/role/edit">Edit</Link>,
+        label: <Link to="/role/edit">Edit</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
       {
         key: 'role-x',
-        label: <Link to="/dashboard/role/x">List</Link>,
+        label: <Link to="/role/x">List</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
     ],
   },
   {
-    key: 'rolex',
-    label: 'Rolexx',
-    icon: <TagsOutlined />,
-    permissions: 'role.read',
+    key: 'fileManager',
+    label: 'File Manager',
+    icon: <CodeOutlined />,
+    permissions: 'user.read',
     children: [
       {
-        key: 'role-createx',
-        label: <Link to="/d/role/create">Create</Link>,
+        key: 'fileManager-create',
+        label: <Link to="/file-manager/create">Create</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
       {
-        key: 'role-editx',
-        label: <Link to="/d/role/edit">List</Link>,
-        icon: <PlusOutlined />,
-        permissions: 'user.read',
-      },
-      {
-        key: 'role-listx',
-        label: <Link to="/d/role/list">List</Link>,
+        key: 'fileManager-list',
+        label: <Link to="/file-manager/list">List</Link>,
         icon: <PlusOutlined />,
         permissions: 'user.read',
       },
     ],
   },
-  {
-    key: 'course',
-    label: <Link to="/d/role/list">List</Link>,
-    icon: <BookOutlined />,
-    permissions: 'course.read',
-  },
+  // {
+  //   key: 'course',
+  //   label: <Link to="/d/role/list">List</Link>,
+  //   icon: <BookOutlined />,
+  //   permissions: 'course.read',
+  // },
   {
     key: 'policy',
     label: <Link to="/signin">Signin</Link>,

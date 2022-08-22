@@ -303,10 +303,6 @@ function Language({ form, languages, setLanguages }) {
                   <Button
                     onClick={() => {
                       const formResultField = form.getFieldValue();
-                      console.log(
-                        '🚀 ~ file: language.component.js ~ line 306 ~ Language ~ formResultField',
-                        formResultField
-                      );
 
                       // Form field increase whenever change form.item but ui languages only update after re-render
                       // So we can delete the last item if has change value in form.item to keep ui work well

@@ -90,18 +90,6 @@ const ChallengeList = () => {
 
   return (
     <div>
-      <Radio.Group
-        onChange={({ target: { value } }) => {
-          setSelectionType(value);
-        }}
-        value={selectionType}
-        style={{ marginBottom: 10 }}
-      >
-        <Radio value="checkbox">Checkbox</Radio>
-        <Radio value="radio">radio</Radio>
-      </Radio.Group>
-      <p>h</p>
-
       <Table
         size="small"
         columns={columns}

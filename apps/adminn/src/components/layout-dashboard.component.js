@@ -1,15 +1,18 @@
+import { css } from '@emotion/css';
+import { Outlet } from 'react-router-dom';
 import { Layout, Spin, Drawer } from 'antd';
 import { ErrorBoundary } from 'react-error-boundary';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import React, { Suspense, useEffect, useState } from 'react';
 
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
-import React, { Suspense, useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
 import { useMediaQuery } from '@koj-react/hooks';
-import { css } from '@emotion/css';
+import { sidebarItems } from '@/configs/sidebar.config';
 import { headerHeightPx } from '@/constants/default-value';
+
 import SidebarMenu from './sidebar.component';
 import ErrorFallback from './error-fallback.component';
-import { sidebarItems } from '@/configs/sidebar.config';
+import HeaderComponent from './header.component';
 
 const { Header, Content, Sider } = Layout;
 
@@ -57,6 +60,7 @@ function LayoutDashboard(props) {
           )}
         </Header>
       )}
+      <HeaderComponent />
       <Layout className="child-layout">
         {isDesktop ? (
           <Sider
@@ -66,7 +70,9 @@ function LayoutDashboard(props) {
             onCollapse={onCollapse}
             collapsedWidth={48}
           >
-            <SidebarMenu items={sidebarItems} callback={() => {}} />
+            <PerfectScrollbar>
+              <SidebarMenu items={sidebarItems} callback={() => {}} />
+            </PerfectScrollbar>
           </Sider>
         ) : (
           <Drawer
@@ -77,7 +83,9 @@ function LayoutDashboard(props) {
             placement="left"
             className={`${drawerStyle} extend-sider-bg`}
           >
-            <SidebarMenu items={sidebarItems} callback={() => {}} />
+            <PerfectScrollbar>
+              <SidebarMenu items={sidebarItems} callback={() => {}} />
+            </PerfectScrollbar>
           </Drawer>
         )}
         <Content className="content">

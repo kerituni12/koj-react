@@ -3,15 +3,12 @@
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   background-clip: padding-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   opacity: 1;
   z-index: 1;
 }
 
 .Resizer:hover {
-  -webkit-transition: all 2s ease;
   transition: all 2s ease;
 }
 
@@ -51,8 +48,6 @@
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   background-clip: padding-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
   z-index: 999;
@@ -75,8 +70,6 @@
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   background-clip: padding-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
 }
@@ -110,6 +103,13 @@
   overflow-y: auto;
   width: 150px;
 }
+.testcase-panel.mobile .testcases {
+  height: 100%;
+  list-style: none;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 50px;
+}
 
 .testcase-panel .testcases li {
   margin: 0 0 1px;
@@ -136,6 +136,14 @@
   flex-direction: column;
   height: 100%;
   width: calc(100% - 150px);
+}
+
+.testcase-panel.mobile .wrap-testcases-content {
+  background: var(--sec-bg-block);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: calc(100% - 50px);
 }
 
 .code-view ul li > a {

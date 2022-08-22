@@ -1,21 +1,22 @@
+import clsx from 'clsx';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-
 import { Input, Form, Row, Col, Select } from 'antd';
+
 import { InfoCircleOutlined } from '@ant-design/icons/lib/icons';
 
-import KojModal from '../Modal';
-
-import { Editor as ClassicEditor } from '@koj-react/ckeditor';
 import { Emitter } from '@koj-react/emitter';
-import { html } from '@/utils/format-search';
-import { lazy, useEffect, useRef, useState } from 'react';
+import { Editor as ClassicEditor } from '@koj-react/ckeditor';
+
+import KojModal from '../Modal';
 import { topicTagOptions } from '../configs/topic-tags.config';
 import { ckeditorCustomStyle } from '../styles/challenge.style';
-import clsx from 'clsx';
 
 let FileManager;
 
 function Description({ ckeditor, description }) {
+  const { t } = useTranslation(['challenge', 'common']);
   const [data, setData] = useState();
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -48,7 +49,7 @@ function Description({ ckeditor, description }) {
       <Row gutter={16}>
         <Col span={12}>
           <Form.Item
-            label="Tên thử thách"
+            label={t('title')}
             name="challengeName"
             required
             rules={[
@@ -63,7 +64,7 @@ function Description({ ckeditor, description }) {
         </Col>
         <Col span={12}>
           <Form.Item
-            label="Tên hàm"
+            label={t('function_name')}
             name="functionName"
             tooltip={{
               title: 'Tooltip with customize icon',
@@ -77,7 +78,7 @@ function Description({ ckeditor, description }) {
       <Row gutter={16}>
         <Col span={12}>
           <Form.Item
-            label="Đối tượng xem"
+            label={t('audience')}
             name="audience"
             required
             tooltip="This is a required field"
@@ -95,7 +96,7 @@ function Description({ ckeditor, description }) {
         </Col>
         <Col span={12}>
           <Form.Item
-            label="Độ khó"
+            label={t('difficulty')}
             name="difficulty"
             tooltip={{
               title: 'Tooltip with customize icon',

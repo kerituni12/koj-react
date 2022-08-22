@@ -1,0 +1,26 @@
+{
+  "input": "Input",
+  "output": "Output",
+  "expected_output": "Expected Output",
+  "actual_output": "Actual Output",
+  "limit_time": "Limit Time",
+  "executed_time": "Execute Time",
+  "state": "State",
+  "run_test": "Run Test",
+  "submit": "Submit",
+  "wrong": "wrong",
+  "hidden_testcase": "Hidden test case",
+  "title": "Title",
+  "function_name": "Function Name",
+  "audience": "Audiance",
+  "difficulty": "Difficulty",
+  "topic_tag": "Topic Tag",
+  "param_name": "Param Name",
+  "param_type": "Param Type",
+  "object_name": "Object name",
+  "config_for_propeties": "Config for properties",
+  "action": {
+    "add_input": "Add input",
+    "add_object": "Add object"
+  }
+}

@@ -19,6 +19,7 @@ import ErrorFallback from '@/components/error-fallback.component';
 import { useLocation, useParams } from 'react-router-dom';
 import NotFoundPage from '@/components/not-found.component';
 import { genLanguages } from '../language.util';
+import { useTranslation } from 'react-i18next';
 
 const { Content } = Layout;
 const { TabPane } = Tabs;
@@ -26,6 +27,7 @@ const { TabPane } = Tabs;
 function Challenges(props) {
   console.log('challenge re-render');
 
+  const { t } = useTranslation();
   const [form] = Form.useForm();
   const params = useParams();
   const ckeditor = useRef(null);
@@ -113,7 +115,7 @@ function Challenges(props) {
                     <Button type="primary" shape="circle" size="small">
                       1
                     </Button>
-                    Description
+                    {t('title.description')}
                   </span>
                 }
                 key="1"
@@ -135,7 +137,7 @@ function Challenges(props) {
                     <Button type="primary" shape="circle" size="small">
                       2
                     </Button>
-                    Language
+                    {t('title.language')}
                   </span>
                 }
                 key="2"

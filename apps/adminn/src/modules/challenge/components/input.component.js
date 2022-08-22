@@ -22,6 +22,7 @@ import {
 } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { useLocation } from 'react-router-dom';
@@ -45,6 +46,7 @@ function genTypeOptionsFromStruct(struct = []) {
 }
 
 function ChallengeInput({ form, customType, setCustomType, structs }) {
+  const { t } = useTranslation(['challenge', 'common']);
   const location = useLocation();
   const scrollRef = useRef();
   const isRemoveRef = useRef();
@@ -100,7 +102,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
     <PerfectScrollbar containerRef={(el) => (scrollRef.current = el)}>
       <Content className={tabPaneStyle}>
         <Collapse className={collapseStyle} accordion defaultActiveKey={['1']}>
-          <Collapse.Panel header="Dau ra" key="1">
+          <Collapse.Panel header={t('output')} key="1">
             <Row>
               <Col span={24}>
                 <Form.Item name="output">
@@ -160,7 +162,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
               </Col>
             </Row>
           </Collapse.Panel>
-          <Collapse.Panel header="Dau vao" key="2">
+          <Collapse.Panel header={t('input')} key="2">
             <Form.List name="inputs">
               {(inputs, { add, remove }) => {
                 return (
@@ -168,7 +170,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                     {inputs.length === 0 && (
                       <Col span={24}>
                         <div className={headerStyle}>
-                          <b>Đầu vào</b>
+                          <b>{t('input')}</b>
                           <Button
                             type="link"
                             icon={<PlusOutlined />}
@@ -184,7 +186,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                             }}
                             style={{ padding: '4px 0' }}
                           >
-                            Thêm đầu vào
+                            {t('action.add_input')}
                           </Button>
                         </div>
                       </Col>
@@ -211,7 +213,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                                 }}
                                 style={{ padding: '4px 0' }}
                               >
-                                Thêm đầu vào
+                                {t('action.add_input')}
                               </Button>
 
                               <Button
@@ -226,22 +228,19 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
 
                         <Col span={12}>
                           <Form.Item
-                            label="Tên tham số"
+                            label={t('param_name')}
                             name={[input.name, 'name']}
                             required
-                            tooltip="This is a required field"
+                            tooltip={t('field_is_require')}
                           >
-                            <Input placeholder="input placeholder" />
+                            <Input placeholder={t('param_name')} />
                           </Form.Item>
                         </Col>
                         <Col span={12}>
                           <Form.Item
-                            label="Kiểu dữ liệu"
+                            label={t('param_type')}
                             name={[input.name, 'type']}
-                            tooltip={{
-                              title: 'Tooltip with customize icon',
-                              icon: <InfoCircleOutlined />,
-                            }}
+                            tooltip={t('param_type')}
                           >
                             <Select
                               style={{ width: '100%' }}
@@ -326,7 +325,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                     {structs.length === 0 && (
                       <Col span={24}>
                         <div className={headerStyle}>
-                          <b>Doi tuong</b>
+                          <b>Object</b>
                           <Button
                             type="link"
                             icon={<PlusOutlined />}
@@ -341,7 +340,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                             }}
                             style={{ padding: '4px 0' }}
                           >
-                            Thêm doi tuong
+                            {t('action.add_object')}
                           </Button>
                         </div>
                       </Col>
@@ -365,7 +364,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                           <Col span={24}>
                             <div className={headerStyle}>
                               <b>
-                                Doi tuong {Number(structs.length - struct.name)}
+                                Object {Number(structs.length - struct.name)}
                               </b>
                               <Space>
                                 <Button
@@ -382,7 +381,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                                   }}
                                   style={{ padding: '4px 0' }}
                                 >
-                                  Thêm đầu vào
+                                  {t('action.add_object')}
                                 </Button>
 
                                 <Button
@@ -397,17 +396,17 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
 
                           <Col span={12}>
                             <Form.Item
-                              label="Tên doi tuong"
+                              label={t('object_name')}
                               name={[struct.name, 'name']}
                               rules={[
                                 {
                                   required: true,
-                                  message: 'field is required',
+                                  message: t('statement.field_is_required'),
                                 },
                               ]}
                               required
                             >
-                              <Input placeholder="input placeholder" />
+                              <Input />
                             </Form.Item>
                           </Col>
                           <Col span={12}>
@@ -425,7 +424,7 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                               expandIconPosition="right"
                             >
                               <Collapse.Panel
-                                header="Cấu hình cho thuoc tinh"
+                                header={t('config_for_propeties')}
                                 key="1"
                               >
                                 {}
@@ -439,13 +438,13 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                                               span={10}
                                               style={{ paddingBottom: 10 }}
                                             >
-                                              Ten tham so
+                                              {t('param_name')}
                                             </Col>
                                             <Col
                                               span={12}
                                               style={{ paddingBottom: 10 }}
                                             >
-                                              Kieu du lieu
+                                              {t('param_type')}
                                             </Col>
                                             <Col span={2}>
                                               <Button
@@ -475,9 +474,9 @@ function ChallengeInput({ form, customType, setCustomType, structs }) {
                                               <Form.Item
                                                 name={[field.name, 'name']}
                                                 required
-                                                tooltip="This is a required field"
+                                                tooltip={t('field_is_required')}
                                               >
-                                                <Input placeholder="input placeholder" />
+                                                <Input />
                                               </Form.Item>
                                             </Col>
                                             <Col span={12}>

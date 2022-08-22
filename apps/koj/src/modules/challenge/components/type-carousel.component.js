@@ -7,47 +7,47 @@ import '@koj-react/ui/style/slick-theme.css';
 const typeList = [
   {
     title: 'Algorithm',
-    description: 'hlell',
+    description: 'problems',
     color: '#FF416C',
     color2: '#240b36',
   },
   {
-    title: 'Algorithm',
-    description: 'hlell',
+    title: 'Design System',
+    description: 'problems',
     color: '#134E5E',
     color2: '#71B280',
   },
   {
-    title: 'Algorithm',
-    description: 'hlell',
+    title: 'Sql',
+    description: 'problems',
     color: '#556270',
     color2: '#FF6B6B',
   },
 
   {
-    title: 'Algorithm',
-    description: 'hlell',
+    title: 'Object Structure',
+    description: 'problems',
     color: '#3494E6',
     color2: '#EC6EAD',
   },
   {
     title: 'Algorithm',
-    description: 'hlell',
+    description: 'problems',
     color: '#FF416C',
     color2: '#f5af19',
   },
-  {
-    title: 'Algorithm',
-    description: 'hlell',
-    color: '#9D50BB',
-    color2: '#2C3F88',
-  },
-  {
-    title: 'Algorithm',
-    description: 'hlell',
-    color: '#1FA2FF',
-    color2: '#A6FFCB',
-  },
+  // {
+  //   title: 'Algorithm',
+  //   description: 'problems',
+  //   color: '#9D50BB',
+  //   color2: '#2C3F88',
+  // },
+  // {
+  //   title: 'Algorithm',
+  //   description: 'problems',
+  //   color: '#1FA2FF',
+  //   color2: '#A6FFCB',
+  // },
 ];
 
 const settings = {

@@ -1,0 +1,26 @@
+{
+  "input": "Đầu vào",
+  "output": "Đầu ra",
+  "expected_output": "Đầu ra mong muốn",
+  "actual_output": "Đầu ra thực tế",
+  "limit_time": "Giới hạn thời gian",
+  "executed_time": "Thời gian thực hiện",
+  "state": "Trạng thái",
+  "run_test": "Chạy thử",
+  "submit": "Nộp bài",
+  "wrong": "Kết quả sai",
+  "hidden_testcase": "Test case ẩn",
+  "title": "Tên thử thách",
+  "function_name": "Tên hàm",
+  "audience": "Đối tượng xem",
+  "difficulty": "Độ khó",
+  "topic_tag": "Topic Tag",
+  "param_name": "Tên tham số",
+  "param_type": "Kiểu tham số",
+  "object_name": "Tên object",
+  "config_for_propeties": "Cấu hình cho thuộc tính",
+  "action": {
+    "add_input": "Thêm đầu vào",
+    "add_object": "Thêm object"
+  }
+}

@@ -211,11 +211,11 @@ const colors = [
 ];
 
 const typeList = [
-  { title: 'Algorithm', description: 'hlell', color: '#3d9eff' },
-  { title: 'Algorithm', description: 'hlell', color: '#f21600' },
-  { title: 'Algorithm', description: 'hlell', color: '#00e49c' },
-  { title: 'Algorithm', description: 'hlell', color: '#a800e2' },
-  { title: 'Algorithm', description: 'hlell', color: '#ef00d7' },
+  { title: 'Algorithm', description: 'problems', color: '#3d9eff' },
+  { title: 'Algorithm', description: 'problems', color: '#f21600' },
+  { title: 'Algorithm', description: 'problems', color: '#00e49c' },
+  { title: 'Algorithm', description: 'problems', color: '#a800e2' },
+  { title: 'Algorithm', description: 'problems', color: '#ef00d7' },
 ];
 
 export default function ChallengeSet() {

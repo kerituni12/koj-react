@@ -38,6 +38,7 @@ import { InnerLoading } from '@/components/loading.component';
 
 import { LoginContext } from '../context/login.context';
 import { submitChallengeMutation } from '../graphql/challenge.mutation';
+import { useMediaQuery } from '@koj-react/hooks';
 
 function CodePaneView({ languages, challenge }) {
   const params = useParams();
@@ -49,6 +50,8 @@ function CodePaneView({ languages, challenge }) {
   const fileRef = useRef(null);
   const editorRef = useRef(null);
   const elementRef = useRef(null);
+
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const [consoleMessage, setConsoleMessage] = useState();
   const [testcases, setTestcases] = useState(challenge.testcases || []);
@@ -219,11 +222,14 @@ function CodePaneView({ languages, challenge }) {
 
   return (
     <>
-      {loading && <InnerLoading />}
+      {isDesktop && loading && <InnerLoading />}
       {/* {!email && <LoginRequire />} */}
       <SplitPane
         split="horizontal"
-        style={{ backgroundColor: '#1e1e1e' }}
+        style={{
+          backgroundColor: '#1e1e1e',
+          position: isDesktop ? 'absolute' : 'unset',
+        }}
         defaultSize={TESTCASE_HEADER_SIZE_PX}
         maxSize={TESTCASE_HEADER_MAX_SIZE_PX}
         minSize={TESTCASE_HEADER_MIN_SIZE_PX}
@@ -319,7 +325,7 @@ function CodePaneView({ languages, challenge }) {
               onChange={onTabChange}
             >
               <Tabs.TabPane tab="Test cases" key="1">
-                <div className="testcase-panel">
+                <div className={clsx('testcase-panel', !isDesktop && 'mobile')}>
                   <div className="wrap-testcases tab-active">
                     <div
                       className={clsx(
@@ -336,7 +342,7 @@ function CodePaneView({ languages, challenge }) {
                             }`}
                             onClick={() => setSelectedTestcaseId(testcase.id)}
                           >
-                            Test case {index + 1}
+                            {isDesktop && 'Test case'} {index + 1}
                             {typeof testcase.result !== 'undefined' ? (
                               testcase.result ? (
                                 <ButtonCustom

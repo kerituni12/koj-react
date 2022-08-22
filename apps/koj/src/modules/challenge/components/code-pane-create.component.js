@@ -60,6 +60,7 @@ import { isEditPage, sortInputDesc } from '@/utils/common';
 import { defaultLanguages } from '../configs/languages.config';
 import { paramTypeOptions } from '../configs/input-type.config';
 import { useBasePath } from '@/hooks/use-basepath';
+import { useTranslation } from 'react-i18next';
 
 const testcases = [
   { id: 1, inputs: [1, 2, 3, 4, 5], output: [1, 2, 3, 4, 5], timeout: 4000 },
@@ -138,6 +139,7 @@ function CodePane({
   const basePath = useBasePath('slug');
   const navigate = useNavigate();
 
+  const { t } = useTranslation();
   const divRef = useRef(null);
   const fileRef = useRef(null);
   const editorRef = useRef(null);
@@ -555,7 +557,7 @@ function CodePane({
                 icon={<PlusOutlined />}
                 onClick={submit}
               >
-                Tao thu thach
+                {t('create')}
               </Button>
             ) : (
               <Button
@@ -566,7 +568,7 @@ function CodePane({
                 icon={<EditOutlined />}
                 onClick={submit}
               >
-                Chinh sua
+                {t('edit')}
               </Button>
             )}
           </div>

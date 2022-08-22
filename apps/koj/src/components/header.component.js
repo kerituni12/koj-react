@@ -22,7 +22,6 @@ import { logout } from '@/modules/auth/auth.slice';
 import { headerHeightPx } from '@/constants/default-value';
 import { useMediaQuery } from '@koj-react/hooks';
 import SidebarMenu from './sidebar.component';
-import { sidebarItems } from '@/configs/sidebar.config';
 
 import { MenuFoldOutlined } from '@ant-design/icons';
 
@@ -79,7 +78,7 @@ const UserActionMenu = ({ onActionClick }) => {
 const HeaderComponent = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)');
   const [acitveMenuKey, setAcitveMenuKey] = useState('');
-  const [isOpenDrawer, setIsOpenDrawer] = useState(!isDesktop);
+  const [isOpenDrawer, setIsOpenDrawer] = useState(false);
 
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -133,9 +132,10 @@ const HeaderComponent = () => {
           closable={false}
           visible={isOpenDrawer}
           placement="left"
+          width={300}
           className={`${drawerStyle} extend-sider-bg`}
         >
-          <SidebarMenu items={sidebarItems} callback={() => {}} />
+          <SidebarMenu items={headerMenuItems} callback={() => {}} />
         </Drawer>
       )}
     </>

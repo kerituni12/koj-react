@@ -32,6 +32,7 @@ import { useParams } from 'react-router-dom';
 import { css } from '@emotion/css';
 import styled from '@emotion/styled';
 import { InnerLoading } from '@/components/loading.component';
+import { useMediaQuery } from '@koj-react/hooks';
 
 function CodePaneView({ languages, challenge }) {
   console.log('code editor re-render');
@@ -42,6 +43,8 @@ function CodePaneView({ languages, challenge }) {
   const fileRef = useRef(null);
   const editorRef = useRef(null);
   const elementRef = useRef(null);
+
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const [consoleMessage, setConsoleMessage] = useState();
   const [testcases, setTestcases] = useState(challenge.testcases || []);
@@ -259,7 +262,7 @@ function CodePaneView({ languages, challenge }) {
                             }`}
                             onClick={() => setSelectedTestcaseId(testcase.id)}
                           >
-                            Test case {index + 1}
+                            {isDesktop && 'Test case'} {index + 1}
                             {typeof testcase.result !== 'undefined' ? (
                               testcase.result ? (
                                 <ButtonCustom

@@ -22,7 +22,7 @@ import HeaderNoticeComponent from './notice.component';
 import LogoKoj from '@/assets/images/logo-w.svg';
 import { headerHeightPx } from '@/constants/default-value';
 import i18n from '@/i18n/i18n';
-// import { setLocale } from '@/modules/user/user.slice';
+import { setLocale } from '@/modules/user/user.slice';
 import { useMemo, useState } from 'react';
 const { Header } = Layout;
 
@@ -76,7 +76,7 @@ const HeaderComponent = ({ collapsed, toggle }) => {
   };
 
   const selectLocale = ({ key }) => {
-    // dispatch(setLocale({ locale: key }));
+    dispatch(setLocale({ locale: key }));
     i18n.changeLanguage(key);
   };
 

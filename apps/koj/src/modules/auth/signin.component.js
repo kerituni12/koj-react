@@ -13,7 +13,7 @@ import { SignupForm } from './signup.component';
 import { useTranslation } from 'react-i18next';
 
 const initialValues = {
-  email: 'hieunguyen',
+  email: 'test@gmail.com',
   password: 'hieunguyen',
   // remember: true
 };

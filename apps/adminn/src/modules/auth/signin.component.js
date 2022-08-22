@@ -23,7 +23,7 @@ import axios from '@/services/axios';
 import SocialLogin from 'react-social-login';
 
 const initialValues = {
-  email: 'hieunguyen',
+  email: 'test@gmail.com',
   password: 'hieunguyen',
   // remember: true
 };

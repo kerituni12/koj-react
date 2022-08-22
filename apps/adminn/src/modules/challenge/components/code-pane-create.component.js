@@ -59,6 +59,8 @@ import { isEditPage, sortInputDesc } from '@/utils/common';
 import { defaultLanguages } from '../configs/languages.config';
 import { paramTypeOptions } from '../configs/input-type.config';
 import { useBasePath } from '@/hooks/use-basepath';
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const testcases = [
   { id: 1, inputs: [1, 2, 3, 4, 5], output: [1, 2, 3, 4, 5], timeout: 4000 },
@@ -117,7 +119,7 @@ function MenuDropDown({ addFile, setVisibleDropdown }) {
           whiteSpace: 'nowrap',
         }}
       >
-        <PlusOutlined /> Add item
+        <PlusOutlined /> {t('action.add')}
       </Typography.Link>
     </Space>
   );
@@ -137,6 +139,7 @@ function CodePane({
   const basePath = useBasePath('slug');
   const navigate = useNavigate();
 
+  const { t } = useTranslation(['challenge', 'common']);
   const divRef = useRef(null);
   const fileRef = useRef(null);
   const editorRef = useRef(null);
@@ -553,7 +556,7 @@ function CodePane({
                 icon={<PlusOutlined />}
                 onClick={submit}
               >
-                Tao thu thach
+                {t('action.create', { ns: 'common' })}
               </Button>
             ) : (
               <Button
@@ -564,7 +567,7 @@ function CodePane({
                 icon={<EditOutlined />}
                 onClick={submit}
               >
-                Chinh sua
+                {t('action.edit', { ns: 'common' })}
               </Button>
             )}
           </div>
@@ -754,7 +757,7 @@ function CodePane({
                                 )}
                               >
                                 <Row>
-                                  <Col span={8}>Đầu vào:</Col>
+                                  <Col span={8}>{t('input')}:</Col>
                                   <Col span={16}>
                                     {/* {JSON.stringify(testcase.inputs)} */}
                                     <Row>
@@ -775,32 +778,53 @@ function CodePane({
                                 </Row>
                                 {testcase.output && (
                                   <Row>
-                                    <Col span={8}>Đầu ra thực tế:</Col>
+                                    <Col span={8}> {t('actual_output')}:</Col>
                                     <Col span={16}>{testcase.output}</Col>
                                   </Row>
                                 )}
                                 <Row>
-                                  <Col span={8}>Đầu ra mong muốn:</Col>
+                                  <Col span={8}> {t('expected_output')}:</Col>
                                   <Col span={16}>{testcase.expectedOutput}</Col>
                                 </Row>
                                 <Row>
-                                  <Col span={8}>Giới hạn thời gian:</Col>
+                                  <Col span={8}>{t('limit_time')}:</Col>
                                   <Col span={16}>{testcase.timeout} ms</Col>
                                 </Row>
-                                <Row>
-                                  <Col span={8}>Thời gian thực hiện:</Col>
-                                  <Col span={16}></Col>
-                                </Row>
-                                <Row>
-                                  <Col span={8}>Tin nhắn:</Col>
-                                  <Col span={16}>
-                                    <div id="txtRunContentMesseger_0"></div>
-                                  </Col>
-                                </Row>
+                                {testcase.time && (
+                                  <Row>
+                                    <Col span={8}> {t('executed_time')}:</Col>
+                                    <Col span={16}></Col>
+                                  </Row>
+                                )}
+                                {testcase.message && (
+                                  <Row>
+                                    <Col span={8}>{t('state')}:</Col>
+                                    <Col span={16}>
+                                      <div id="txtRunContentMesseger_0"></div>
+                                    </Col>
+                                  </Row>
+                                )}
+
                                 <Row>
                                   <Col span={8}>Mô tả:</Col>
                                   <Col span={16}></Col>
                                 </Row>
+                                {testcase.errorMessage && (
+                                  <Row>
+                                    <Col span={8}>
+                                      {t('title.error', { ns: 'common' })}:
+                                    </Col>
+                                    <Col span={16}>{testcase.errorMessage}</Col>
+                                  </Row>
+                                )}
+                                {testcase.log && (
+                                  <Row>
+                                    <Col span={8}>
+                                      {t('title.log', { ns: 'common' })}:
+                                    </Col>
+                                    <Col span={16}>{testcase.log}</Col>
+                                  </Row>
+                                )}
                               </div>
                             </div>
                           )
@@ -1027,7 +1051,7 @@ function CodePane({
                   // onChange={handleChange}
                   >
                     <Select.Option value="easy">Easy</Select.Option>
-                    <Select.Option value="medium">medium</Select.Option>
+                    <Select.Option value="medium">Medium</Select.Option>
                     <Select.Option value="hard" disabled>
                       Hard
                     </Select.Option>
